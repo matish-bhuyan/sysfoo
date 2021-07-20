@@ -1,11 +1,5 @@
 pipeline {
   agent any
-
-  tools{
-    maven 'Maven 3.6.1'
-  }
-
-
   stages{
       stage("build"){
           steps{
@@ -26,7 +20,9 @@ pipeline {
           }
       }
   }
-
+tools{
+    maven 'Maven 3.6.1'
+  }
   post{
     always{
         echo 'This pipeline is completed..'
